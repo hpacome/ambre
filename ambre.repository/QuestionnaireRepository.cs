@@ -5,28 +5,32 @@ namespace ambre.repository;
 
 public class QuestionnairesRepository : IQuestionnairesRepository
 {
-    public QuestionnairesRepository()
-    {
+    private readonly ApplicationDbContext _context;
 
+    public QuestionnairesRepository(ApplicationDbContext context)
+    {
+        _context = context;
     }
 
-    public Task CreateAsync(QuestionnaireEntity entity)
+    public void Create(QuestionnaireEntity entity)
     {
-        throw new NotImplementedException();
+        _context.Questionnaires.Add(entity);
+        _context.SaveChanges();
     }
 
-    public Task<IQueryable<QuestionnaireEntity>> GetAllAsync()
+    public IQueryable<QuestionnaireEntity> GetAll()
     {
-        throw new NotImplementedException();
+        return _context.Questionnaires.AsQueryable();
     }
 
-    public Task<QuestionnaireEntity> GetAsync(Guid id)
+    public QuestionnaireEntity? Get(Guid id)
     {
-        throw new NotImplementedException();
+        return _context.Questionnaires.FirstOrDefault(x => x.Id == id);
     }
 
-    public Task UpdateAsync(QuestionnaireEntity entity)
+    public void Update(QuestionnaireEntity entity)
     {
-        throw new NotImplementedException();
+        _context.Questionnaires.Update(entity);
+        _context.SaveChanges();
     }
 }

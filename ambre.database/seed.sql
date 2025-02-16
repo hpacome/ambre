@@ -1,2 +1,2 @@
-INSERT INTO questionnaires (question, response) VALUES ('Quelle est la différence entre struct et class ?', 'class est un type référence (alloué sur le tas). struct est un type valeur (alloué sur la pile).');
-INSERT INTO questionnaires (question, response) VALUES ('Quelle est la différence entre IEnumerable et IQueryable ?', 'IEnumerable exécute la requête en mémoire. IQueryable exécute la requête sur la source de données (ex. base de données).');
+INSERT INTO Questionnaires (question, response) VALUES ('Quelle est la différence entre struct et class ?', 'class est un type référence (alloué sur le tas). struct est un type valeur (alloué sur la pile).');
+INSERT INTO Questionnaires (question, response) VALUES ('Quelle est la différence entre IEnumerable et IQueryable ?', 'IEnumerable exécute la requête en mémoire. IQueryable exécute la requête sur la source de données (ex. base de données).');

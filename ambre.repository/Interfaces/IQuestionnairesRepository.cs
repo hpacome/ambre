@@ -4,11 +4,11 @@ namespace ambre.repository.Interface;
 
 public interface IQuestionnairesRepository
 {
-    Task CreateAsync(QuestionnaireEntity entity);
+    void Create(QuestionnaireEntity entity);
 
-    Task UpdateAsync(QuestionnaireEntity entity);
+    void Update(QuestionnaireEntity entity);
 
-    Task<QuestionnaireEntity> GetAsync(Guid id);
+    QuestionnaireEntity? Get(Guid id);
 
-    Task<IQueryable<QuestionnaireEntity>> GetAllAsync();
+    IQueryable<QuestionnaireEntity> GetAll();
 }
